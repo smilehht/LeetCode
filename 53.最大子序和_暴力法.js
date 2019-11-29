@@ -4,29 +4,20 @@
  */
 let maxSubArray = function(nums) {
 
-    if (!nums.length) {
-        return 0;
-    }
-    if (nums.length === 1) {
-        return nums[0];
-    }
-
     let len = nums.length;
-    let sum = nums[0];
+    let max = nums[0];
 
     for(let i = 0; i < len; i++) {
 
-        let temp = nums[i];
+        temp = 0;
         for (let j = i; j < len; j++) {
             
-            j > i && (temp += nums[j]);
-            if (temp > sum) {
-                sum = temp;
-            }
+            temp += nums[j];
+            max = temp > max ? temp : max;
         }
     }
 
-    return sum;
+    return max;
 
 };
 
