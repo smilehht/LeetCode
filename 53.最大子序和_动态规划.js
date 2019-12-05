@@ -7,15 +7,11 @@ let maxSubArray = function(nums) {
     if (!nums.length) {
         return 0;
     }
-    if (nums.length === 1) {
-        return nums[0];
-    }
 
     let len = nums.length;
-    let arr = [];
     let sum = nums[0];
+    let arr = [];
     arr[0] = sum
-
 
     for(let i = 1; i < len; i++) {
 
@@ -24,7 +20,6 @@ let maxSubArray = function(nums) {
     }
 
     return sum;
-
 };
 
 let arr = [1, 2]
